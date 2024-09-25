@@ -1,0 +1,50 @@
+#!/usr/bin/env node
+require('module-alias/register')
+
+var app = require('@root/app');
+var http = require('http');
+
+var port = process.env.PORT || '3000';
+console.info("Setting application's port to " + port); // Explain port setup
+app.set('port', port);
+
+var server = http.createServer(app);
+console.log("Creating HTTP server instance"); // Explain server creation
+
+console.info("Starting server on port " + port);
+server.listen(port);
+server.on('error', onError);
+server.on('listening', onListening);
+
+function normalizePort(val) {
+  var port = parseInt(val, 10);
+  console.log("Normalizing port value"); // Explain port normalization
+  if (isNaN(port)) return val;
+  if (port >= 0) return port;
+  return false;
+}
+
+function onError(error) {
+  console.error(error.message); // Explain error handling
+  if (error.syscall !== 'listen') throw error;
+  var bind = typeof port === 'string' ? 'Pipe ' + port : 'Port ' + port;
+
+  switch (error.code) {
+    case 'EACCES':
+      console.error(`${bind} requires elevated privileges`);
+      process.exit(1);
+      break;
+    case 'EADDRINUSE':
+      console.error(`${bind} is already in use`);
+      process.exit(1);
+      break;
+    default:
+      throw error;
+  }
+}
+
+function onListening() {
+  var addr = server.address();
+  var bind = typeof addr === 'string' ? 'pipe ' + addr : 'port ' + addr.port;
+  console.info(`Server started. Listening on ${bind}`);  // Explain server start event
+}
