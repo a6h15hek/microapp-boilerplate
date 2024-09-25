@@ -6,6 +6,7 @@
 
 # Ignore dependencies
 node_modules/
+package-lock.json
 
 # Ignore logs
 logs/
@@ -13,12 +14,8 @@ logs/
 # Ignore environment variables
 .env.local
 
-# Ignore generated git properties file variables
-git.properties
 
-# Ignore the build folder of views
+# Ignore the build folder of views & spring boot
 views/build
-
-package-lock.json
-
 target
+service/resources/static

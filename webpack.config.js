@@ -8,7 +8,7 @@ const config = {
   entry: './views/index.js',
   devtool: false,
   output: {
-    path: path.resolve(__dirname, 'views', 'build'),
+    path: path.resolve(__dirname, 'service', 'resources/static'),
     filename: 'bundle.js'
   },
   devServer: {
