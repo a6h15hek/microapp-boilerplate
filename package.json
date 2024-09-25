@@ -16,14 +16,6 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
-  "_moduleAliases": {
-    "@root": ".",
-    "@routes": "./routes",
-    "@services": "./services",
-    "@scripts": "./scripts",
-    "@utils": "./utils",
-    "@static": "./static"
-  },
   "devDependencies": {
     "@babel/core": "^7.24.6",
     "@babel/preset-env": "^7.24.6",
