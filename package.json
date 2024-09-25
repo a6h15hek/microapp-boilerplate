@@ -8,7 +8,8 @@
     "start:react": "webpack serve --open --hot --config webpack.config.js",
     "build:react": "webpack --config webpack.config.js",
     "start:service": "mvn spring-boot:run",
-    "build:service": "mvn clean install"
+    "build:service": "mvn clean install",
+    "test:service": "mvn clean test -X"
   },
   "dependencies": {
     "html-webpack-plugin": "5.5.1",
