@@ -18,3 +18,4 @@ logs/
 # Ignore the build folder of views & spring boot
 views/build
 target
+node

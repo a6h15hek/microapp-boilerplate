@@ -1,12 +1,14 @@
 {
-  "name": "application-name",
+  "name": "mfe-template",
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start:react": "NODE_ENV=prod webpack serve --open --hot --config webpack.config.js",
-    "build:react": "NODE_ENV=prod webpack --config webpack.config.js",
-    "start:service": "mvn clean spring-boot:run",
-    "build:service": "mvn clean install",
+    "build:react:prod": "NODE_ENV=prod webpack --config webpack.config.js",
+    "build:service:prod": "mvn clean install -Pprod -Dspring.profiles.active=prod",
+    "start:react": "NODE_ENV=dev webpack serve --open --hot --config webpack.config.js",
+    "build:react": "NODE_ENV=dev webpack --config webpack.config.js",
+    "start:service": "mvn clean spring-boot:run -Pdev -Dspring.profiles.active=dev",
+    "build:service": "mvn clean install -Pdev -Dspring.profiles.active=dev",
     "test:service": "mvn clean test -X"
   },
   "dependencies": {

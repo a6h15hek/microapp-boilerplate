@@ -16,7 +16,15 @@
 
     <properties>
         <java.version>21</java.version> 
+        <current-env></current-env>
     </properties>
+
+    <profiles>
+        <profile>
+            <id>prod</id>
+            <properties><current-env>:prod</current-env></properties>
+        </profile>
+    </profiles>
 
     <dependencies>
         <dependency>
@@ -113,7 +121,7 @@
                             <goal>npm</goal>
                         </goals>
                         <configuration>
-                            <arguments>run build:react</arguments>
+                            <arguments>run build:react${current-env}</arguments>
                         </configuration>
                     </execution>
                 </executions>
