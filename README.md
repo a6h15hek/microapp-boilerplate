@@ -35,6 +35,7 @@ Commands to build, run test cases, and run the development server for both the f
 
 ### Folder Naming Conventions
 
+```bash
 root
 ├── service
 │   ├── main
@@ -50,6 +51,8 @@ root
 │   ├── pages
 │   ├── contexts
 │   └── test
+
+```
 
 ### Test Files
 - **Backend**: Tests should be written in the `service/test` folder.
