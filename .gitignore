@@ -20,3 +20,5 @@ git.properties
 views/build
 
 package-lock.json
+
+target
