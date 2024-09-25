@@ -3,6 +3,12 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 const ESLintPlugin = require('eslint-webpack-plugin');
 
+const currentEnv = process.env.NODE_ENV || 'dev'; // Default to 'development' if NODE_ENV is not set
+const dotenvFiles = [
+  './resources/.env',
+  `./resources/.env.${currentEnv}`
+].filter(Boolean);
+
 const config = {
   mode: 'development',
   entry: './views/index.js',
@@ -42,7 +48,7 @@ const config = {
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'views/public', 'index.html')
     }),
-    new Dotenv({ path: './.env.prod' }),
+    ...dotenvFiles.map(file => new Dotenv({ path: file })),
     new ESLintPlugin({
       extensions: ['js', 'jsx'],
       exclude: 'node_modules', 

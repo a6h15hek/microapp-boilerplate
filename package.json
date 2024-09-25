@@ -3,10 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start:prod": "npm run build:react",
-    "start:local": "npm run build:react",
-    "start:react": "webpack serve --open --hot --config webpack.config.js",
-    "build:react": "webpack --config webpack.config.js",
+    "start:react": "NODE_ENV=prod webpack serve --open --hot --config webpack.config.js",
+    "build:react": "NODE_ENV=prod webpack --config webpack.config.js",
     "start:service": "mvn clean spring-boot:run",
     "build:service": "mvn clean install",
     "test:service": "mvn clean test -X"
