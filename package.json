@@ -7,7 +7,7 @@
     "start:local": "npm run build:react",
     "start:react": "webpack serve --open --hot --config webpack.config.js",
     "build:react": "webpack --config webpack.config.js",
-    "start:service": "mvn spring-boot:run",
+    "start:service": "mvn clean spring-boot:run",
     "build:service": "mvn clean install",
     "test:service": "mvn clean test -X"
   },

@@ -51,7 +51,11 @@
         <testSourceDirectory>${project.basedir}/service/test</testSourceDirectory>
         <resources>
             <resource>
-                <directory>${project.basedir}/service/resources</directory>
+                <directory>${project.basedir}/resources</directory>
+            </resource>
+            <resource>
+                <directory>${project.basedir}/views/build</directory>
+                <targetPath>static</targetPath>
             </resource>
         </resources>
         <plugins>
