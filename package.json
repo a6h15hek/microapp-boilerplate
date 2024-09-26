@@ -4,11 +4,11 @@
   "private": true,
   "scripts": {
     "build:react:prod": "NODE_ENV=prod webpack --config webpack.config.js",
-    "build:service:prod": "mvn clean install -Pprod -Dspring.profiles.active=prod",
+    "build:service:prod": "mvn clean install -Pprod",
     "start:react": "NODE_ENV=dev webpack serve --open --hot --config webpack.config.js",
     "build:react": "NODE_ENV=dev webpack --config webpack.config.js",
     "start:service": "mvn clean spring-boot:run -Pdev -Dspring.profiles.active=dev",
-    "build:service": "mvn clean install -Pdev -Dspring.profiles.active=dev",
+    "build:service": "mvn clean install -Pdev",
     "test:service": "mvn clean test -X"
   },
   "dependencies": {
