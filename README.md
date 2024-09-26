@@ -86,7 +86,7 @@ Once you create a repository using a template, it will be disconnected from that
 
 1. **Add the template as a remote:**
 ```bash
-git remote add -f template [template_url]
+git remote add template [template_url]
 ```
 
 1. **Fetch all changes from the template:**
