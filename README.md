@@ -78,3 +78,24 @@ To run the project, use the following commands:
 
 ### Run Tests
 - **Backend**: `mvn clean test -X`
+
+
+## Updating a Repository Created from a Template
+
+Once you create a repository using a template, it will be disconnected from that template. To manually update your repository with changes from the template, follow these steps:
+
+1. **Add the template as a remote:**
+```bash
+git remote add template [template_url]
+```
+
+1. **Fetch all changes from the template:**
+```bash
+git fetch --all
+```
+
+1. **Merge changes from the template’s main branch:**
+```bash
+git merge template/main --allow-unrelated-histories
+```
+**Note:** If your project has diverged significantly from the template, you may encounter merge conflicts. These will need to be resolved manually.
