@@ -55,6 +55,20 @@
             <artifactId>spring-boot-test</artifactId>
             <scope>test</scope>
         </dependency>
+
+        <!-- This dependency includes the common code used across all microapps.
+         Refer to the following repository for the boilerplate setup:
+         https://github.com/a6h15hek/microapp-common-lib-boilerplate
+         This repository contains the necessary setup to place common code for both Java and UI in one place,
+         allowing for reuse across different microapps. -->
+<!--        <dependency>-->
+<!--            <groupId>com.a6h15hek</groupId>-->
+<!--            <artifactId>microapp-common</artifactId>-->
+<!--            <version>0.0.1-SNAPSHOT</version>-->
+<!--            <scope>compile</scope>-->
+<!--        </dependency>-->
+
+
     </dependencies>
 
     <build>
