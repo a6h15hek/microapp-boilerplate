@@ -21,6 +21,10 @@
 
     <profiles>
         <profile>
+            <id>dev</id>
+            <properties><current-env> </current-env></properties>
+        </profile>
+        <profile>
             <id>prod</id>
             <properties><current-env>:prod</current-env></properties>
         </profile>
