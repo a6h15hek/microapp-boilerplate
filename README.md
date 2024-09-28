@@ -15,6 +15,15 @@ Imagine having a page with graphs and data that needs to be replicated in anothe
 ## Developer Benefits
 Developers can use this boilerplate to create various small UI examples, screens, pages, or components, which can then be integrated into their parent applications. As the name suggests, it is used to create micro apps that can be integrated into a parent application. These micro apps can be deployed and managed separately.
 
+## Common Library Boilerplate
+The `Microapp Library Boilerplate` can also be used to store reusable code for multiple microapps. To avoid duplication, the common library can include shared Java classes, models, functions, interfaces, and React components.
+Repository link: https://github.com/a6h15hek/microapp-library-boilerplate
+
+```sh
+git clone https://github.com/a6h15hek/microapp-library-boilerplate.git
+cd microapp-library-boilerplate
+```
+
 ## Repository Usage
 This repository can serve as a template for new repositories. Developers can create new repositories named after the micro app, add the relevant code, and host them independently. These micro apps can then be used as plugins in multiple applications.
 
