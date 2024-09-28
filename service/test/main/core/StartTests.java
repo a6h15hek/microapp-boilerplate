@@ -1,9 +1,9 @@
-package service.main;
+package main.core;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import main.Start;
+import core.Start;
 
 @SpringBootTest(classes = Start.class)
 class StartTests {

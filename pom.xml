@@ -10,25 +10,13 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.2.3</version>
+        <version>3.3.4</version>
         <relativePath/> 
     </parent>
 
     <properties>
-        <java.version>21</java.version> 
-        <current-env> </current-env>
+        <java.version>22</java.version>
     </properties>
-
-    <profiles>
-        <profile>
-            <id>dev</id>
-            <properties><current-env> </current-env></properties>
-        </profile>
-        <profile>
-            <id>prod</id>
-            <properties><current-env>:prod</current-env></properties>
-        </profile>
-    </profiles>
 
     <dependencies>
         <dependency>
@@ -88,7 +76,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>main.core.Start</mainClass>
+                    <mainClass>core.Start</mainClass>
                 </configuration>
             </plugin>
             <plugin>
@@ -109,33 +97,36 @@
                 </executions>
             </plugin>
             <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>exec-maven-plugin</artifactId>
-                <version>3.0.0</version>
+                <groupId>com.github.eirslett</groupId>
+                <artifactId>frontend-maven-plugin</artifactId>
+                <version>1.12.0</version>
                 <executions>
+                    <execution>
+                        <id>install node and npm</id>
+                        <goals>
+                            <goal>install-node-and-npm</goal>
+                        </goals>
+                        <configuration>
+                            <nodeVersion>v18.18.0</nodeVersion>
+                            <npmVersion>8.1.0</npmVersion>
+                        </configuration>
+                    </execution>
                     <execution>
                         <id>npm install</id>
                         <goals>
-                            <goal>exec</goal>
+                            <goal>npm</goal>
                         </goals>
                         <configuration>
-                            <executable>npm</executable>
-                            <arguments>
-                                <argument>install</argument>
-                            </arguments>
+                            <arguments>install</arguments>
                         </configuration>
                     </execution>
                     <execution>
                         <id>npm run build</id>
                         <goals>
-                            <goal>exec</goal>
+                            <goal>npm</goal>
                         </goals>
                         <configuration>
-                            <executable>npm</executable>
-                            <arguments>
-                                <argument>run</argument>
-                                <argument>build:react${current-env}</argument>
-                            </arguments>
+                            <arguments>run build:react:${spring.profiles.active}</arguments>
                         </configuration>
                     </execution>
                 </executions>
