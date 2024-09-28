@@ -50,7 +50,7 @@
          This repository contains the necessary setup to place common code for both Java and UI in one place,
          allowing for reuse across different microapps. -->
 <!--        <dependency>-->
-<!--            <groupId>com.a6h15hek</groupId>-->
+<!--            <groupId>com.service-library</groupId>-->
 <!--            <artifactId>microapp-common</artifactId>-->
 <!--            <version>0.0.1-SNAPSHOT</version>-->
 <!--            <scope>compile</scope>-->
