@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 const ESLintPlugin = require('eslint-webpack-plugin');
+const package_json = require('./package.json');
 
 const currentEnv = process.env.NODE_ENV || 'dev'; // Default to 'development' if NODE_ENV is not set
 const dotenvFiles = [
@@ -53,6 +54,13 @@ const config = {
       extensions: ['js', 'jsx'],
       exclude: 'node_modules', 
       failOnError: true
+    }),
+    new ModuleFederationPlugin({
+      name: package_json.name,
+      filename: 'remoteEntry.js',
+      exposes: {
+        './MicoApp': './views/index.js',
+      },
     }),
   ]
 };
