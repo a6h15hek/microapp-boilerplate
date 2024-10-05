@@ -2,6 +2,14 @@
 
 This boilerplate is designed to facilitate the creation of micro apps that include both frontend and backend code within a single repository. These micro apps can be deployed independently and used as plugins in other applications.
 
+```mermaid
+flowchart LR
+    microservice
+    microfrontend
+    microapp
+    microapp ~~~ |=| microservice ~~~ |＋| microfrontend 
+```
+
 ## Use Case
 Imagine having a page with graphs and data that needs to be replicated in another application. Instead of rewriting its service and UI in the new app, a micro app can be created with all the necessary frontend and backend code in one repository. This micro app can then be deployed independently and used as a plugin in multiple applications. This approach is useful for creating anything from a full page to a simple component that needs to be reused across different apps.
 
