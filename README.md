@@ -7,7 +7,7 @@ flowchart LR
     microservice
     microfrontend
     microapp
-    microapp ~~~ |=| microservice ~~~ |＋| microfrontend 
+    microapp ~~~ |<==| microservice ~~~ |＋| microfrontend 
 ```
 
 ## Use Case
